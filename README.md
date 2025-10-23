@@ -55,6 +55,24 @@
    python main.py
    ```
 
+### 打包成可执行文件
+
+想要打包成独立运行的 exe 文件？查看详细指南：[BUILD_GUIDE.md](BUILD_GUIDE.md)
+
+**快速打包（推荐）：**
+```bash
+# Windows
+build.bat
+
+# Linux/macOS
+./build.sh
+
+# 或使用 Python 脚本（跨平台）
+python build.py
+```
+
+打包后的文件在 `dist/` 目录，可以在没有 Python 的电脑上直接运行！
+
 ## 游戏玩法
 
 ### 基础命令
