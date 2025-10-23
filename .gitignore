@@ -10,3 +10,15 @@ saves/*.json
 .DS_Store
 *.swp
 *.swo
+
+# PyInstaller
+*.spec
+!TerminalInfiltrator.spec
+*.manifest
+*.exe
+*.app
+
+# 发布文件
+release-*/
+*.zip
+*.tar.gz
