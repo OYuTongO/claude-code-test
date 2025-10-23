@@ -17,7 +17,7 @@ def get_game_levels():
 
 你成功连接到了系统，现在需要找到隐藏的信息。
             """,
-            "hint": "先使用 scan 命令查看系统中的文件，然后尝试读取它们",
+            "hint": "1. 使用 scan 查看文件\n2. 使用 decrypt 解密加密文件\n3. 从文件中找到密码\n4. 使用 execute 命令访问数据库",
             "files": [
                 {
                     "name": "welcome.txt",

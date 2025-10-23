@@ -3,6 +3,7 @@
 """
 import random
 import time
+from colorama import Fore, Style
 from game.terminal import Terminal
 
 
@@ -113,7 +114,10 @@ exit             - 退出游戏
                         # 检查是否需要密码
                         if 'password' in target:
                             Terminal.print_warning("目标受密码保护")
-                            Terminal.print_info("提示: 尝试使用 decrypt 命令解密文件获取密码")
+                            Terminal.print_info("提示: 需要使用正确的访问命令和密码")
+                            Terminal.print_info("尝试使用 decrypt 命令解密文件获取密码，然后使用 execute 命令访问")
+                            if self.engine.current_level == 0:
+                                Terminal.print_info(f"示例: {Fore.YELLOW}execute access database [密码]{Style.RESET_ALL}")
                             return
                         else:
                             # 模拟破解过程
@@ -163,6 +167,10 @@ exit             - 退出游戏
                                 # 检查是否解锁了某个目标
                                 if 'unlocks' in file:
                                     self.engine.unlock_target(file['unlocks'])
+                                    # 给出更明确的提示
+                                    if file['name'].lower() == 'note.txt' and self.engine.current_level == 0:
+                                        Terminal.print_info("💡 提示: 现在你知道了密码，可以使用以下命令访问数据库:")
+                                        print(f"   {Fore.YELLOW}execute access database 2024{Style.RESET_ALL}\n")
                                 return
                             else:
                                 Terminal.print_error("答案错误，解密失败")
